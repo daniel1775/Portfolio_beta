@@ -18,18 +18,18 @@
 </head>
 
 <body>
-   <nav class="nav">
-      <img id="nav__logo" src="img/logo-gray.svg" alt="">
+   <nav id="nav">
+      <img id="nav__logo" src="img/logo.png" alt="">
       <ul class="nav__list">
-         <li class="nav__list--home">HOME</li>
-         <li class="nav__list--about">ABOUT</li>
-         <li class="nav__list--skills">SKILLS</li>
-         <li class="nav__list--portfolio">PORTFOLIO</li>
+         <li class="nav__list--home"><a class="nav__active" href="#header">HOME</a></li>
+         <li class="nav__list--about"><a href="#about">ABOUT</a></li>
+         <li class="nav__list--skills"><a href="#skills">SKILLS</a></li>
+         <li class="nav__list--portfolio"><a href="#portfolio">PORTFOLIO</a></li>
       </ul>
    </nav>
 
-   <header class="header">
-      <div class="header__cont-text">
+   <header id="header">
+      <div class="header__section">
          <h1 class="header__title">
             Hi, I am
          </h1>
@@ -47,23 +47,25 @@
 
    <main>
       <section class="info">
-         <div class="about">
-            <h2 class="about__title">
+         <div id="about">
+            <h2 class="about__title animation__left">
                ABOUT ME
+               <hr>
             </h2>
-            <p class="about__text">
+            <p class="about__text animation__left">
                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti
                atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident,
                similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. At vero eos
                et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
                corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.
             </p>
-            <button class="about__buton about__buton--cv">Download CV</button>
+            <button class="about__button about__button--cv animation__left">Download CV</button>
          </div>
 
-         <div class="skills">
-            <h2 class="skills__title">
+         <div id="skills">
+            <h2 class="skills__title animation__right">
                MY SKILLS
+               <hr>
             </h2>
             <div class="skills__icons">
                <img src="img/js-icon.svg" alt="">
@@ -76,17 +78,17 @@
          </div>
       </section>
 
-      <section class="portfolio">
-         <h2 class="portfolio__title">
+      <section id="portfolio">
+         <h2 class="portfolio__title animation__left">
             PORTFOLIO
+            <hr>
          </h2>
-
          <div class="portfolio__section portfolio__section--tetris">
             <div class="tribute__image">
                <img src="img/tetris-capture.svg" alt="">
             </div>
             <h3 class="tribute__title">
-               BIOSHOCK LANDING PAGE
+               Tetris
             </h3>
             <p class="tribute__text tribute__text--description">
                Simple tetris videogame with all the basic functionalities
@@ -114,7 +116,7 @@
                <img src="img/bioshock-capture.svg" alt="">
             </div>
             <h3 class="tribute__title">
-               BIOSHOCK LANDING PAGE
+               Bioshock landing page
             </h3>
             <p class="tribute__text tribute__text--description">
                Desgin and development of a landing page about the videogame Bioshock
@@ -142,7 +144,7 @@
                <img src="img/hanged-capture.svg" alt="">
             </div>
             <h3 class="tribute__title">
-               BIOSHOCK LANDING PAGE
+               Hanged
             </h3>
             <p class="tribute__text tribute__text--description">
                Hanged videogame created with pause and reload options
@@ -167,18 +169,19 @@
       </section>
 
       <section class="contact">
-         <div class="contact__plane">
+         <div class="contact__plane animation__left">
             <img src="img/plane-draw.svg" alt="">
          </div>
          <div class="contact__section">
-            <h2 class="contact__title">
+            <h2 class="contact__title animation__right">
                CONTACT ME
+               <hr>
             </h2>
             <form class="contact__form" action="">
-               <input type="text" placeholder="Name">
-               <input type="text" placeholder="Email">
-               <input type="text" placeholder="Message">
-               <input class="contact__input contact__input--submit" type="submit" value="Send">
+               <input id="contact__form--name" type="text" placeholder="Name" autocomplete="off">
+               <input id="contact__form--email" type="text" placeholder="Email" autocomplete="off">
+               <input id="contact__form--message" type="text" placeholder="Message" autocomplete="off">
+               <input id="contact__form--submit" type="submit" value="Send">
             </form>
          </div>
       </section>
@@ -190,13 +193,15 @@
       </p>
       <div class="footer__section">
          <div class="footer__github--icon">
-            <img src="img/github-icon.svg" alt="">
+            <a href="https://github.com/daniel1775?tab=repositories"><img src="img/github-icon.svg" alt=""></a>
          </div>
          <div class="footer__linked--icon">
-            <img src="img/linked-icon.svg" alt="">
+            <a href="https://www.linkedin.com/in/daniel-bustos-nieto-71407619a/"><img src="img/linked-icon.svg" alt=""></a>
          </div>
       </div>
    </footer>
+
+   <script src="js/main.js"></script>
 </body>
 
 </html>
