@@ -1,28 +1,58 @@
 let prevScrollPos = window.pageYOffset;
-let containerMenu = document.getElementById("nav");
+let containerMenu = document.getElementById('nav');
 
-let animatedLeft = document.querySelectorAll(".animation__left");
-let animatedRight = document.querySelectorAll(".animation__right");
+let animatedLeft = document.querySelectorAll('.animation__left');
+let animatedRight = document.querySelectorAll('.animation__right');
 
-function showScroll(){
-   let scrollTop =  document.documentElement.scrollTop;
-   for(let i=0 ; i<animatedLeft.length ; i++){
+let btn_menu = document.getElementById('btn-menu');
+let menu = document.querySelector('.nav__list');
+let mediaqueryList = window.matchMedia("(max-width: 450px)");
+let items = document.querySelectorAll('.nav__list li a');
+let body = document.body;
+
+// make right and left displacement when scroll is reach
+window.addEventListener('scroll', () => {
+   let scrollTop = document.documentElement.scrollTop;
+   for (let i = 0; i < animatedLeft.length; i++) {
       let highAnimated = animatedLeft[i].offsetTop;
-      if(highAnimated-500 < scrollTop){
+      if (highAnimated - 550 < scrollTop) {
          animatedLeft[i].style.opacity = 1;
-         animatedLeft[i].classList.add("showLeft");
+         animatedLeft[i].classList.add('showLeft');
       }
    }
-   for(let i=0 ; i<animatedRight.length ; i++){
+   for (let i = 0; i < animatedRight.length; i++) {
       let highAnimated = animatedRight[i].offsetTop;
-      if(highAnimated-500 < scrollTop){
+      if (highAnimated - 500 < scrollTop) {
          animatedRight[i].style.opacity = 1;
-         animatedRight[i].classList.add("showRight");
+         animatedRight[i].classList.add('showRight');
       }
    }
-}
+});
 
-window.addEventListener('scroll', showScroll);
+// Movile menu hidden/show
+btn_menu.addEventListener('change', () => {
+   if (btn_menu.checked) {
+      menu.style.transform = 'translateX(0%)';
+      body.style.overflowY = 'hidden';
+   } else {
+      menu.style.transform = 'translateX(-100%)';
+      body.style.overflowY = 'scroll';
+   }
+});
+
+// keep item actived and show
+items.forEach((element) => {
+   element.addEventListener('click', (event) => {
+      if (mediaqueryList.matches) {
+         menu.style.transform = 'translateX(-100%)';
+         btn_menu.click();
+      }
+      items.forEach((link) => {
+         link.classList.remove('nav__active');
+      });
+      event.target.classList.add('nav__active');
+   });
+});
 
 /* // Esconder barra de menu
 window.onscroll = () => {
