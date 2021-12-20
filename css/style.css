@@ -32,7 +32,7 @@ html{
    margin-top: 3vh;
    margin-bottom: 2vh;
    width: 60px;
-   height: 50px;
+   height: 60%;
 }
 
 .nav__list{
@@ -45,7 +45,6 @@ html{
 .nav__list li{
    list-style: none;
    font-size: 20px;
-   
 }
 
 .nav__list li a{
@@ -84,6 +83,7 @@ html{
    height: 100vh;
    background:black;
    background: linear-gradient(to right bottom, var(--gray) 45%, black 0%);
+   flex-wrap: wrap;
 }
 
 .header__section{
@@ -104,7 +104,6 @@ html{
 
 .header__image{
    margin-right: 8vw;
-
 }
 
 /* -- about and skills ------------------------*/
@@ -128,8 +127,10 @@ html{
    color: white;
    padding: 10px;
    margin-top: 5vh;
-   font-size: 24px;
+   font-size: 20px;
    border-radius: 4px;
+   border: none;
+   font-weight: bold;
 }
 
 .about__title{
@@ -174,7 +175,7 @@ html{
 /* -- portfolio section ---------------------------------------*/
 #portfolio{
    display: grid;
-   grid-template-rows: 1fr 4fr 4fr;
+   grid-template-rows: 1fr 20fr 20fr;
    grid-template-columns: 1fr 1fr;
    background-color: var(--gray);
    padding-top: 10vh;
@@ -298,6 +299,7 @@ html{
 
 .contact__title{
    text-align: end;
+   margin-bottom: -50px;
 }
 
 .contact__form{
@@ -319,14 +321,21 @@ html{
 
 #contact__form--message{
    height: 150px;
+   font-size: 1.2rem;
+   margin: 20px;
+   padding: 20px;
+   width: 70%;
 }
 
 #contact__form--submit{
    background-color: var(--green);
    border: none;
+   border-radius: 4px;
    color: white;
    font-size: 1.2rem;
    width: 5em;
+   padding: 5px;
+   font-weight: bold;
 }
 
 /* -- footer --------------------------------------*/
@@ -395,5 +404,184 @@ html{
    }
    100%{
       transform: translateX(0px);
+   }
+}
+
+/* -- media querys ----------------------------------------------- */
+@media (max-width:450px){
+   #nav{
+      height: 10vh;
+   }
+
+   #nav__logo{
+      margin-top: 2vh;
+   }
+
+   .nav__list{
+      display: none;
+   }
+
+   /* -- header section -------------------------------------------*/
+   #header{
+      padding-top: 20vh;
+      padding-bottom: 40em;
+   }
+
+   .header__section{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      width: 100%;
+      margin-bottom: 1.5em;
+   }
+
+   .header__section h1{
+      font-size: 40px;
+      text-align: center;
+      margin: 0;
+   }
+
+   .header__section h2{
+      font-size: 28px;
+      text-align: center;
+      margin-top: 1.5em;
+   }
+
+   .header__image{
+      display: flex;
+      justify-content: center;
+      width: 100vw;
+      margin: 0;
+   }
+
+   .header__image img{
+      width: 80vw;
+      height: 80vw;
+   }
+
+   /* -- info section -------------------------------------*/
+   .info{
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+      padding-left: 0;
+   }
+   
+   #about{
+      width: 90vw;
+      margin-left: 5vw;
+   }
+
+   .about__title{
+      font-size: 28px;
+      padding-bottom: 2em;
+      width: 70%;
+   }
+
+   #about p{
+      font-size: 22px;
+      width: 80%;
+   }
+
+   #skills{
+      width: 100vw;
+      margin-top: 14em;
+   }
+
+   .skills__title{
+      justify-self: end;
+      width: 70%;
+   }
+
+   .skills__icons{
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+   }
+
+   .skills__title{
+      font-size: 28px;
+   }
+
+   /* -- portfolio section -------------------------------------*/
+   #portfolio{
+      grid-template-rows: 1fr 4fr 4fr 4fr;
+      grid-template-columns: 1fr;
+   }
+
+   .portfolio__section{
+      width: 90vw;
+   }
+
+   .portfolio__title{
+      grid-row: 1;
+      grid-column: 1;
+      font-size: 28px;
+      width: 70%;
+   }
+
+   .portfolio__section--tetris{
+      margin-top: -20vh;
+      margin-bottom: -20vh;
+      grid-row: 2;
+      grid-column: 1;
+   }
+
+   .portfolio__section--tribute{
+      grid-row: 3;
+      grid-column: 1;
+   }
+
+   .portfolio__section--hanged{
+      grid-row: 4;
+      grid-column: 1;
+   }
+
+   /* -- contact section -------------------------------------*/
+   .contact{
+      justify-content: center;
+      padding-top: 21vh;
+      padding-bottom: 15vh;
+   }
+
+   .contact__title{
+      justify-self: center;
+      align-self: end;
+      width: 70%;
+      margin-right: 5vw;
+   }
+
+   .contact h2{
+      font-size: 28px;
+   }
+
+   .contact__plane{
+      display: none;
+   }
+
+   .contact__section{
+      align-items: center;
+      width: 100vw;
+      margin: 0;
+   }
+
+   .contact__form{
+      width: 100vw;
+      margin-left: 0;
+   }
+
+   #contact__form--submit{
+      align-self: end;
+      margin-right: 15vw;
+   }
+
+   /* -- footer section ----------------------------------*/
+   .footer__section img{
+      width: 15vw;
+      height: 15vw;
+   }
+
+   .footer__text{
+      font-size: 20px;
    }
 }

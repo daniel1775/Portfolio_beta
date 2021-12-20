@@ -19,7 +19,7 @@
 
 <body>
    <nav id="nav">
-      <img id="nav__logo" src="img/logo.png" alt="">
+      <img id="nav__logo" src="img/logo-svg.svg" alt="">
       <ul class="nav__list">
          <li class="nav__list--home"><a class="nav__active" href="#header">HOME</a></li>
          <li class="nav__list--about"><a href="#about">ABOUT</a></li>
@@ -180,8 +180,8 @@
             <form class="contact__form" action="">
                <input id="contact__form--name" type="text" placeholder="Name" autocomplete="off">
                <input id="contact__form--email" type="text" placeholder="Email" autocomplete="off">
-               <input id="contact__form--message" type="text" placeholder="Message" autocomplete="off">
-               <input id="contact__form--submit" type="submit" value="Send">
+               <textarea name="message" id="contact__form--message" cols="30" rows="10" placeholder="Message" autocomplete="off"></textarea>
+               <button id="contact__form--submit">Send</button>
             </form>
          </div>
       </section>
