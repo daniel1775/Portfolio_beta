@@ -90,7 +90,7 @@ html{
    align-items: center;
    height: 100vh;
    background:black;
-   background: linear-gradient(to right bottom, var(--gray) 45%, black 0%);
+   background: linear-gradient(153deg, var(--gray) 45%, black 0%);
    flex-wrap: wrap;
 }
 
@@ -120,7 +120,8 @@ html{
    background-color: var(--gray);
    padding-top: 10vh;
    padding-left: 3vw;
-   background: linear-gradient(to right bottom, black 50%, var(--gray) 0%);
+   /* background: linear-gradient(to right bottom, var(--gray) 45%, black 0%); */
+   background: linear-gradient(153deg, black 60%, var(--gray) 0%);
 }
 
 #about{
@@ -131,6 +132,7 @@ html{
 }
 
 .about__button--cv{
+   display: none;
    background-color: var(--green);
    color: white;
    padding: 10px;
@@ -317,13 +319,17 @@ html{
    margin-top: 14vh;
 }
 
-.contact__form input{
+.contact__form input, textarea{
    width: 70%;
    height: 50px;
    margin: 20px;
    padding: 20px 20px;
    border-radius: 10px;
    font-size: 1.2rem;
+   color: black;
+}
+
+.contact__form input::placeholder{
    color: black;
 }
 

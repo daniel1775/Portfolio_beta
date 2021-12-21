@@ -54,6 +54,29 @@ items.forEach((element) => {
    });
 });
 
+// form function
+const $form = document.querySelector('#form-contact');
+
+$form.addEventListener('submit', submitEmail);
+
+async function submitEmail(event){
+   event.preventDefault();
+   const form = new FormData(this);
+   const response = await fetch(this.action, {
+      method: this.method,
+      body: form,
+      headers: {
+         'Accept': 'application/json'
+      }
+   })
+   if(response.ok){
+      this.reset();
+      alert('Gracias por escribirme, te responderé lo más pronto posible');
+   }
+}
+
+
+
 /* // Esconder barra de menu
 window.onscroll = () => {
    let currentScrollPos = window.pageYOffset;

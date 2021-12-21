@@ -171,19 +171,19 @@
       </section>
 
       <section class="contact">
-         <div class="contact__plane animation__left">
-            <img src="img/plane-draw.svg" alt="">
+         <div class="contact__plane">
+            <img class="animation__left" src="img/plane-draw.svg" alt="">
          </div>
          <div class="contact__section">
             <h2 class="contact__title animation__right">
                CONTACT ME
                <hr>
             </h2>
-            <form class="contact__form" action="">
+            <form class="contact__form" id="form-contact" action="https://formspree.io/f/xrgjgvvd" method="POST">
                <input id="contact__form--name" type="text" placeholder="Name" autocomplete="off">
                <input id="contact__form--email" type="text" placeholder="Email" autocomplete="off">
                <textarea name="message" id="contact__form--message" cols="30" rows="10" placeholder="Message" autocomplete="off"></textarea>
-               <button id="contact__form--submit">Send</button>
+               <button id="contact__form--submit" class="animation__right">Send</button>
             </form>
          </div>
       </section>
